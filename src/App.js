@@ -1,23 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import Game from './components/Game';
+import User from './components/User';
+import {useState} from 'react'
 
 function App() {
+
+  const [ userX, setUserX ] = useState('')
+  const [ userY, setUserY ] = useState('')
+  const [isUser, setIsUser] = useState(false)
+
+  const handleUserInput = (value, dataType) => {
+    if(dataType === 'X') {
+      setUserX(value)
+    } else {
+      setUserY(value)
+    }
+  }
+
+  const handleSubmit = () => {
+    if(userX && userY) {
+      setIsUser(true)
+    }
+  }
+
+  const componentToDisplay = () => {
+    if(isUser) {
+      return <Game 
+        userX={userX} 
+        userY={userY}
+      />
+    } else {
+      return <User 
+        userX={userX} 
+        userY={userY} 
+        onInput={handleUserInput} 
+        onSubmit={handleSubmit}
+      />
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {componentToDisplay()}
     </div>
   );
 }

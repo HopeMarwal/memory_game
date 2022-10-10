@@ -1,0 +1,88 @@
+.cell {
+  width: 70px;
+  height: 70px;
+  background: rgba(188, 248, 188, 0.945);
+  border: 1px solid rgb(157, 202, 167);
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgb(250, 245, 173);
+   // transition: all 0.5s linear;
+  }
+  &.active {
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgba(250, 173, 173, 0);
+    }
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.game {
+  .status {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(5, 110, 13);
+  }
+}
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 280px;
+  margin: auto;
+  &-row {
+    width: 100%;
+
+  }
+}
+.user {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  max-width: 280px;
+  flex-wrap: wrap;
+  label {
+    text-align: left;
+    margin-top: 10px;
+  }
+  input {
+    width: 100%;
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.btn {
+  margin-top: 20px;
+  border: none;
+  border: 1px solid #ccc;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: rgb(5, 110, 13);
+  font-weight: bold;
+  background: rgb(205, 248, 205);
+}
+
