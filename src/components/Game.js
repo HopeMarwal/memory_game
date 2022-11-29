@@ -4,6 +4,7 @@ import Aside from './Aside'
 import './components.scss'
 
 export default function Game(props) {
+  // Cell values
   const [cells, setCells] = useState([
     {
       value: 'a',
