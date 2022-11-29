@@ -1,4 +1,4 @@
-import React from 'react'
+//style
 import './components.scss'
 
 export default function User(props) {
