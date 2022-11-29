@@ -6,6 +6,7 @@ export default function Board(props) {
 
   return (
     <div className="board"> 
+    {/* row constructor */}
       <div className="board-row">
         {
           props.cells.slice(0, 4).map((item) => {
