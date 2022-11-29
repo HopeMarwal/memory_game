@@ -11,6 +11,7 @@ export default function User(props) {
 
   return (
     <div className='user'>
+      {/* First user input */}
       <label htmlFor='player1'>First player: </label>
       <input 
         id="player1"
@@ -19,6 +20,7 @@ export default function User(props) {
         value={props.userX} 
         onInput={handleInput}
       />
+      {/* Second user input */}
       <label htmlFor='player2'>Second player: </label>
       <input 
         id="player2"
