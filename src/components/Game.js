@@ -274,6 +274,7 @@ export default function Game(props) {
     }
   }
 
+  // Calculate winner 
   const calculateWinner = () => {
 
     if(playerInFo[0].successSteps + playerInFo[1].successSteps !== 8) {
